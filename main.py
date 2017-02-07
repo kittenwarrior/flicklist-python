@@ -105,16 +105,17 @@ class MovieRatings(webapp2.RequestHandler):
         content = t.render(movies = getWatchedMovies())
         self.response.write(content)
 
-    # TODO 2
-    # implement a post method inside this class
-    # it should render the rating-confirmation.html template
 
+    def post(self):
+        movie = self.request.get("movie")
+        rating = self.request.get("rating")
+        if movie and rating:
+            t = jinja_env.get_template("rating-confirmation.html")
+            content = t.render(movie=movie, rating=rating)
+            self.response.write(content)
+        else:
+            self.renderError(400)
 
-
-# TODO 1
-# Make a template called rating-confirmation.html
-# It should show a confirmation message like:
-#    "You gave Lord of the Rings a rating of ****"
 
 
 
