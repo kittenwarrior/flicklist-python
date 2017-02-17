@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FlickList</title>
+        <style type="text/css">
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+      <h1>Login</h1>
+      <p class="error">{{ error  }}</p>
+      <form method="post">
+        <table>
+          <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+              <input name="username" type="text" value"{{ username }}">
+            </td>
+          </tr>
+          <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+              <input name="password" type="password" value"{{ password }}">
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="Login!"/>
+      </form>
+      <p> # TODO: need to finish this, create link to go back to register
